@@ -1,0 +1,14 @@
+$ sudo -i -u postgre
+$ psql
+=# create user <usr> password '<pwd>';
+=# create database mybank_<usr> owner <usr>;
+=# \q
+$ exit
+
+$ sudo vim /etc/postgresql/9.3/main/pg_hba.conf
+local all sqladmin md5
+$ sudo service postgresql restart
+
+$ psql (-U <usr>) mybank_<usr>
+=> \l
+=> \q
